@@ -1,0 +1,551 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisha Fatima | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #e2e8f0;
+        }
+        
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-xl font-bold text-gray-800">Alisha Fatima</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Alisha Fatima</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Data Engineer & AI/ML Enthusiast</h2>
+                    <p class="text-lg mb-8">Dynamic and quick learner with exceptional communication skills, passionate about making a significant impact through technology.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Contact Me</a>
+                        <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-purple-700 transition duration-300">View Projects</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="https://i.ibb.co/Ps2cnxbT/portfolio.jpg" alt="Alisha Fatima" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-purple-200 shadow-lg">
+                        <img src="https://i.ibb.co/Ps2cnxbT/portfolio.jpg" alt="Alisha Fatima" class="w-full h-full object-cover">
+
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg mb-6">I'm a Computer Science Engineering student at SIES Graduate School of Technology with a passion for data engineering and AI/ML. With a CGPA of 9.4, I've consistently demonstrated my ability to learn quickly and apply knowledge effectively.</p>
+                    <p class="text-lg mb-6">Beyond technical skills, I'm an active leader with experience in organizing events, managing teams, and public speaking. My diverse experiences from anchoring to hosting a podcast have honed my communication and leadership abilities.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Education</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-500 pl-4 py-1">
+                                <h4 class="font-medium">Bachelor of Technology - Computer Science Engineering</h4>
+                                <p class="text-gray-600">SIES Graduate School of Technology | Dec 2021 - May 2025 | CGPA: 9.4</p>
+                            </div>
+                            <div class="border-l-4 border-purple-300 pl-4 py-1">
+                                <h4 class="font-medium">12th Grade - CBSE</h4>
+                                <p class="text-gray-600">DAV Public School, Navi Mumbai | Jun 2019 - May 2021 | Score: 89.2%</p>
+                            </div>
+                            <div class="border-l-4 border-purple-200 pl-4 py-1">
+                                <h4 class="font-medium">10th Grade - CBSE</h4>
+                                <p class="text-gray-600">Don Bosco Senior Secondary School, Navi Mumbai | May 2018 - May 2019 | Score: 91.8%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">Python</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">SQL</span>
+                        <!-- <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">Scrapy</span> -->
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">MongoDB</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">Web Scraping</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">LLMs</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">Statistics</span>
+                        <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium transition duration-300">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Experience & Leadership</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Professional Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">Professional Experience</h3>
+                    <div class="space-y-8 relative">
+                        <!-- Sciative Solutions -->
+                        <div class="relative timeline-item pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-purple-200"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold">Data Engineer Intern</h4>
+                                <p class="text-purple-600 font-medium">Sciative Solutions, Navi Mumbai | March 2025 – June 2025</p>
+                                <ul class="mt-3 space-y-2 list-disc list-inside">
+                                    <li>Built scalable and automated pipelines to extract structured data from dynamic websites using headless browsers and scraping tools</li>
+                                    <li>Cleaned, transformed, and stored data efficiently in JSON/CSV formats and databases such as MongoDB</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- ILM UX -->
+                        <div class="relative timeline-item pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-purple-200"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold">AI ML Intern</h4>
+                                <p class="text-purple-600 font-medium">ILM UX, Navi Mumbai | July 2024 - Jan 2025</p>
+                                <ul class="mt-3 space-y-2 list-disc list-inside">
+                                    <li>Fine-tuned a model using LLM and RAG to improve its performance for specialized tasks</li>
+                                    <li>Worked on Project Justice Echo to leverage these advancements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Prodigy Infotech -->
+                        <div class="relative timeline-item pl-8">
+                            <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-purple-200"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold">ML Intern</h4>
+                                <p class="text-purple-600 font-medium">Prodigy Infotech, Remote | June 2024 - July 2024</p>
+                                <ul class="mt-3 space-y-2 list-disc list-inside">
+                                    <li>Developed and implemented predictive models using Linear Regression and K-means clustering</li>
+                                    <li>Collected, preprocessed, and evaluated data to ensure model accuracy</li>
+                                    <li>Utilized Python to analyze complex datasets and solve real-world problems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leadership -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">Leadership & Activities</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-semibold">NSS Volunteer</h4>
+                            <ul class="mt-3 space-y-2 list-disc list-inside">
+                                <li>Organized and participated in events such as blood donation drives, cleanliness campaigns, and the Dream Run marathon</li>
+                                <li>Led skits and street plays on social issues to raise awareness and engage the community</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-semibold">Training and Placement Cell Head</h4>
+                            <ul class="mt-3 space-y-2 list-disc list-inside">
+                                <li>Managed placement processes and organized skill development workshops</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-semibold">WiE Head at IEEE</h4>
+                            <ul class="mt-3 space-y-2 list-disc list-inside">
+                                <li>Organized STEM lectures for underprivileged school children</li>
+                                <li>Conducted various events to promote education and engagement in STEM fields</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-semibold">Publicity Head at Promethean</h4>
+                            <ul class="mt-3 space-y-2 list-disc list-inside">
+                                <li>Led marketing and promotional efforts to enhance event visibility and engagement</li>
+                                <li>Managed communication strategies to effectively promote team activities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Extra-Curriculars -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-6 text-purple-700">Extra-Curriculars</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold flex items-center">
+                            <i class="fas fa-microphone-alt mr-2 text-purple-500"></i> Anchor - TML
+                        </h4>
+                        <p class="mt-2">Public speaking, audience engagement, stage management, script improvisation for cultural events</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold flex items-center">
+                            <i class="fas fa-podcast mr-2 text-purple-500"></i> Podcast Host
+                        </h4>
+                        <p class="mt-2">Hosted a podcast on the Dark Web available on YouTube and Spotify</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Justice Echo -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-balance-scale text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Justice Echo</h3>
+                        <p class="text-gray-600 mb-4">FIR Interrogation System</p>
+                        <p class="mb-4">Platform developed to assist in legal processes by enabling speech-to-text transcription and speaker diarization for FIRs and interrogations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">LLM</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Speech-to-Text</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">NLP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Multi-GDS Aggregator -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-database text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Multi-GDS Aggregator</h3>
+                        <p class="text-gray-600 mb-4">Travel Data Scraping System</p>
+                        <p class="mb-4">Developed a unified scraping system to extract and normalize operator-level data from multiple GDS platforms and their associated travel websites.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Web Scraping</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Data Normalization</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Demencare -->
+                <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-brain text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Demencare</h3>
+                        <p class="text-gray-600 mb-4">Dementia Classification & Care</p>
+                        <p class="mb-4">Website designed to classify dementia types and provide personalized exercises, games, and quizzes to help improve the individual's condition.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Healthcare</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">ML Classification</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+   <!-- Contact Section -->
+<section id="contact" class="py-16 gradient-bg text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+
+    <div class="flex flex-col md:flex-row gap-12">
+      <!-- Contact Info -->
+      <div class="md:w-1/2">
+        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <i class="fas fa-envelope text-xl mr-4 mt-1"></i>
+            <div>
+              <h4 class="font-medium">Email</h4>
+              <a href="mailto:alishaaf312@gmail.com" class="hover:underline">alishaaf312@gmail.com</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-phone-alt text-xl mr-4 mt-1"></i>
+            <div>
+              <h4 class="font-medium">Phone</h4>
+              <a href="tel:+917021454546" class="hover:underline">+91-7021454546</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <i class="fab fa-github text-xl mr-4 mt-1"></i>
+            <div>
+              <h4 class="font-medium">GitHub</h4>
+              <a href="https://github.com/alishaaf" target="_blank" class="hover:underline">github.com/alishaaf</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <i class="fab fa-linkedin text-xl mr-4 mt-1"></i>
+            <div>
+              <h4 class="font-medium">LinkedIn</h4>
+              <a href="https://linkedin.com/in/alisha121" target="_blank" class="hover:underline">linkedin.com/in/alisha121</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="md:w-1/2">
+        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+        <form action="https://formspree.io/f/mgvyqewe" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block mb-2">Your Name</label>
+            <input type="text" id="name" name="name" required
+                   class="w-full px-4 py-3 rounded-lg bg-purple-100 border border-purple-300 text-gray-800 placeholder-gray-600">
+          </div>
+          <div>
+            <label for="email" class="block mb-2">Your Email</label>
+            <input type="email" id="email" name="email" required
+                   class="w-full px-4 py-3 rounded-lg bg-purple-100 border border-purple-300 text-gray-800 placeholder-gray-600">
+          </div>
+          <div>
+            <label for="subject" class="block mb-2">Subject</label>
+            <input type="text" id="subject" name="subject"
+                   class="w-full px-4 py-3 rounded-lg bg-purple-100 border border-purple-300 text-gray-800 placeholder-gray-600">
+          </div>
+          <div>
+            <label for="message" class="block mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required
+                      class="w-full px-4 py-3 rounded-lg bg-purple-100 border border-purple-300 text-gray-800 placeholder-gray-600"></textarea>
+          </div>
+
+          <!-- Optional hidden fields -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+          <button type="submit"
+                  class="bg-white text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 w-full">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2023 Alisha Fatima. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/alisha121" class="hover:text-purple-300 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/alishaaf" class="hover:text-purple-300 transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" class="hover:text-purple-300 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" class="hover:text-purple-300 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === #${sectionId}) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
